@@ -43,11 +43,10 @@ class Api::V1::EventsController < ApplicationController
       texto:       event_params[:texto],
       url_imagen:  event_params[:url_imagen],
       category_id: @categoria.id || event.category.id
-      
+
     )
       head :ok
     else
-      puts @event.errors.full_messages
       render json: "Hubo un error y el evento no fue editado exitosamente", status: 422
     end
   end

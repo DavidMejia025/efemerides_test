@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+category = Category.create(nombre: "deportes")
+
+category.events.create(
+  fecha:      Date.today,
+  texto:      "un dia como hoy en 1935 la seleccion Uruguaya se coronaba campeona de la copa america en Santiago de Chile",
+  url_imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYqhSF_Q9xnddUj4PNBYi_0FulCTnphqpN1C56cah54PcaisRoFQ&s"
+)
