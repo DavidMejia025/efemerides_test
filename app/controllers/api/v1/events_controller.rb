@@ -1,6 +1,14 @@
 class Api::V1::EventsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
+  def index
+    @events = params[:palabra] ? Event.buscar_por_palabra(palabra: params[:palabra]) : Event.all
+puts @events
+    response = @events.map(&:construir_respuesta)
+
+    render json: response.to_json, status: 200
+  end
+
   def create
     @category = obtener_categoria(nombre_categoria: event_params[:categoria])
 
